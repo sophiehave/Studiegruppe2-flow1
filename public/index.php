@@ -49,7 +49,7 @@ $conn = new PDO("mysql:host=$servername;dbname=pipper", $username, $password);
       //Poste dett til databasen
       $sql = "INSERT INTO pips VALUES (default, :Brugernavn, :Besked)";
       $statement = $conn->prepare($sql);
-      $statement->execute(array('default' => $idpips, 'Brugernavn' => $brugernavn, 'Besked' => $besked));
+      $statement->execute(array('Brugernavn' => $brugernavn, 'Besked' => $besked));
     
       $id = $conn->lastInsertId();
       $data =(object) $input;
